@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: booknest-backend
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    region: oregon
+    autoDeploy: true
+    healthCheckPath: /booknest/api/categories
+    envVars:
+      - key: PORT
+        value: 8080
+      # Optional: To connect to external MySQL database, uncomment and set these on Render dashboard:
+      # - key: DB_URL
+      #   value: jdbc:mysql://your-mysql-host:3306/booknest?useSSL=true
+      # - key: DB_USER
+      #   value: root
+      # - key: DB_PASSWORD
+      #   sync: false
