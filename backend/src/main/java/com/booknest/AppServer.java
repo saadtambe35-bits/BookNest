@@ -285,6 +285,7 @@ public class AppServer {
 
         server.createContext("/booknest/api", masterHandler);
         server.createContext("/api", masterHandler);
+        server.createContext("/", masterHandler);
 
         server.setExecutor(java.util.concurrent.Executors.newCachedThreadPool());
         server.start();
